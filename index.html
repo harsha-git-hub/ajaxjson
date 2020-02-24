@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<title>ajax</title>
+		<style>
+			nav{
+				padding:20px;
+				background-color:blue;
+				text-align:center;
+				}
+				nav ul li{
+						display:inline-block;
+						padding:20px;
+						}
+					li>a{
+						text-decoration:none;
+						color:white;
+						font-size:18px;
+						font-weigth:bold;
+					}
+					section{
+						padding:100px;
+						background-color:yellow;
+					       }
+		</style>
+			<script>
+				function homePage()
+				{
+			    	var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "home.html", true);
+				  xhttp.send();
+				}//homepage closes
+				
+				 function aboutPage()
+				 {
+					var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "about.html", true);
+				  xhttp.send();
+				 }
+				 function servicesPage()
+				 {
+				 var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "service.html", true);
+				  xhttp.send();
+				 }
+				 function contactPage()
+				 {
+									var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "contact.html", true);
+				  xhttp.send();
+				 }
+				 
+			</script>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="#home" onclick="homePage()">Home</a></li>
+				<li><a href="#about" onclick="aboutPage()">About</a></li>
+				<li><a href="#service" onclick="servicesPage()">Service</a></li>
+				<li><a href="#contact" onclick="contactPage()">Contact</a></li>
+			</ul>
+		</nav>
+		
+		<section id="demo">
+			here ur page will get displayed with ajax
+		</section>
+	</body>
+</html>

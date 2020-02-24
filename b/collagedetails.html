@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>collage details</title>
+		<link href="dist/css/bootstrap.css" rel="stylesheet">
+		<script>
+			function collageDetails()
+			 {
+			 	var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  var myjsondata=JSON.parse(this.responseText);
+					  
+					  var data="<table class='table table-striped'>";
+								data=data+"<thead>";
+									data=data+"<tr>";
+										data=data+"<th>Course</th><th>Institution</th><th>Board</th><th>Year</th><th>percentage</th>";
+									data=data+"</tr>";
+								data=data+"</thead>";
+								data=data+"</tbody>";
+									for (var i=0;i<myjsondata.length;i++)
+									{
+										data=data+"<tr>";
+											data=data+"<td>"+myjsondata[i].course+"</td>";
+											data=data+"<td>"+myjsondata[i].institution+"</td>";
+											data=data+"<td>"+myjsondata[i].board+"</td>";
+											data=data+"<td>"+myjsondata[i].year+"</td>";
+											data=data+"<td>"+myjsondata[i].percantage+"</td>";
+										data=data+"</tr>";
+										
+									}
+								data=data+"</tbody>";
+					  data=data+"</table>";
+					  document.getElementById("demo").innerHTML=data;
+					}
+				  };
+				  xhttp.open("GET", "user.json", true);
+				  xhttp.send();
+			 }
+		</script>
+	</head>
+	<body>
+		<div class="container">
+		   <div class="row">
+				<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<ul class="nav nav-tabs">
+							<li><a href="#fetch" onclick="collageDetails()">student detalis</a></li>
+						</ul>
+					</div>
+				<div class="col-md-3"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12" id="demo">
+				
+				</div>
+			</div>
+		</div><!-----------container closes---------->
+	</body>
+</html>

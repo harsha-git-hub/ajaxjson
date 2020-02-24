@@ -1,0 +1,164 @@
+<html>
+	<head>
+		<title>ajax</title>
+		 <link  rel="stylesheet" href="dist/css/bootstrap.css">
+		  <link rel="stylesheet" href="fa/css/all.css">
+		<style>
+			nav{
+				padding:5px;
+				text-align:center;
+				background-color:ECF0F1;
+				
+				}
+				nav ul li{
+						display:inline-block;
+						padding:5px;
+						margin-left:25px;
+						
+						}
+					li>a{
+						text-decoration:none;
+						color:blue;
+						font-size:18px;
+						font-weight:bold;
+						text-align:center;
+					}
+			</style>
+			<script>
+				function homePage()
+				{
+			    	var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "home.html", true);
+				  xhttp.send();
+				}//homepage closes
+				
+				 function aboutPage()
+				 {
+					var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "about.html", true);
+				  xhttp.send();
+				 }
+				 function projectPage()
+				 {
+				 var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "project.html", true);
+				  xhttp.send();
+				 }
+				 function contactPage()
+				 {
+									var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "contact.html", true);
+				  xhttp.send();
+				 }
+				 
+			</script>
+	</head>
+	<body>
+	<div class="container-fluid">
+	<div  class="row">
+		<nav>
+			<ul class="nav nav-pills">
+				<li><a href="#about" onclick="aboutPage()">About</a></li>
+				<li><a href="#project" onclick="projectPage()">Project</a></li>
+				<li><a href="#contact" onclick="contactPage()">Contact</a></li>
+			</ul>
+		</nav>
+		
+		<section id="demo">
+	
+		</section>
+		</div>
+		</div>
+		
+	</body>
+</html>
+<script>
+			function collageDetails()
+			 {
+			 	var xhttp;
+				  if (window.XMLHttpRequest) {
+					// code for modern browsers
+					xhttp = new XMLHttpRequest();
+					} else {
+					// code for IE6, IE5
+					xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xhttp.onreadystatechange = function() {
+					// if (this.readyState == 4 && this.status == 200) {
+					  var myjsondata=JSON.parse(this.responseText);
+					  
+					  var data="<table class='table table-striped'>";
+								data=data+"<thead>";
+									data=data+"<tr>";
+										data=data+"<th>Course</th><th>Institution</th><th>Board</th><th>Year</th><th>percentage</th>";
+									data=data+"</tr>";
+								data=data+"</thead>";
+								data=data+"</tbody>";
+									for (var i=0;i<myjsondata.length;i++)
+									{
+										data=data+"<tr>";
+											data=data+"<td>"+myjsondata[i].course+"</td>";
+											data=data+"<td>"+myjsondata[i].institution+"</td>";
+											data=data+"<td>"+myjsondata[i].board+"</td>";
+											data=data+"<td>"+myjsondata[i].year+"</td>";
+											data=data+"<td>"+myjsondata[i].percantage+"</td>";
+										data=data+"</tr>";
+										
+									}
+								data=data+"</tbody>";
+					  data=data+"</table>";
+					  document.getElementById("demo_2").innerHTML=data;
+					// }
+				  };
+				  xhttp.open("GET", "user.json", true);
+				  xhttp.send();
+			 }
+		</script>

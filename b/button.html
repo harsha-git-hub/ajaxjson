@@ -1,0 +1,57 @@
+<html>
+	<head>
+	<style>
+		#name
+		{
+			height:60px;
+			width:150px;
+			backgroundColor:pink;
+			border:2px solid red;
+			margin-left:600px;
+			color:white;
+			border-radius:20px;
+			line-height:50px;
+			
+		}
+	</style>
+			   <script>
+				function myFunction() {
+				  document.body.style.backgroundColor = "red";
+				  alert("you click the red button");
+				}
+				function myFunction1() {
+				  document.body.style.backgroundColor = "green";
+				  document.getElementById("name").innerHTML="you click the green";
+				}
+				function myFunction2() {
+				  document.body.style.backgroundColor = "blue";
+				  alert("you click the blue button");
+				}
+				function myFunction3() {
+				  document.body.style.backgroundColor = "pink";
+				  alert("you click the pink button");
+				}
+				function myFunction4() {
+				  document.body.style.backgroundColor = "orange";
+				  alert("you click the orange button");
+				}
+				function myFunction5() {
+				  document.body.style.backgroundColor = "black";
+				  alert("you click the black button");
+				}					
+				</script>
+
+	</head>
+	<br><br>
+	<body align="center">
+		<input  type="button" value="RED" onclick="myFunction()">
+		<button onclick="myFunction1()">green</button>
+		<button onclick="myFunction2()">blue</button>
+		<button onclick="myFunction3()">pink</button>
+		<button onclick="myFunction4()">orange</button>
+		<button onclick="myFunction5()">black</button><br><br>
+		<div id="name">
+		
+		</div>
+	</body>
+</html>
